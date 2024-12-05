@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Investimentos</title>
+    <!-- Importando o Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="../static/styles/simulacao.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Informações do Investimento -->
+        <div class="card">
+            <h1>{{ tipo_investimento }}</h1>
+
+            <br>
+
+            <table>
+                <tr>
+                    <th class="transparent"><strong>Valor Inicial Investido:</strong></th>
+                    <td class="transparent">R$ {{ valor_inicial | round(2) }}</td>
+                </tr>
+                <tr>
+                    <th class="color"><strong>Aportes Mensais:</strong></th>
+                    <td class="color">R$ {{ valor_mensal | round(2) }}</td>
+                </tr>
+                <tr>
+                    <th class="transparent"><strong>Valor Total Investido:</strong></th>
+                    <td class="transparent">R$ {{ (valor_inicial + (valor_mensal * tempo)) | round(2) }}</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <h2>Resultado Estimado:</h2>
+
+            <br>
+
+            <table>
+                <tr>
+                    <th class="color"><strong>Valor Bruto:</strong></th>
+                    <td class="color">R$ {{ resultado | round(2) }}</td>
+                </tr>
+                <tr>
+                    <th class="transparent"><strong>I.R (Imposto de Renda):</strong></th>
+                    <td class="transparent">R$ {{ ((resultado - valor_inicial) * 0.015) | round(2) }}</td>
+                </tr>
+                <tr>
+                    <th class="color"><strong>Custódia da Bolsa:</strong></th>
+                    <td class="color">R$ 0,00</td>
+                </tr>
+                <tr>
+                    <th class="transparent"><strong>Valor Líquido:</strong></th>
+                    <td class="transparent">R$ {{ (resultado - ((resultado - valor_inicial) * 0.015)) | round(2) }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="grafico">
+            <h2>Rentabilidade</h2>
+            <p><strong>Data de Resgate:</strong> {{ data_resgate }}</p>
+            {{ grafico_html | safe }}
+        </div>
+    </div>
+
+    <div class="botao">
+        <a href="/consultar"><button>Simular outro investimento</button></a>
+        <a href="/plataformas"><button>Investir</button></a>
+    </div>
+
+    <script>
+        // Função para formatar os valores
+        function formatarValor(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+    </script>
+
+</body>
+
+</html>

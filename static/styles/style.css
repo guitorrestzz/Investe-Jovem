@@ -1,0 +1,236 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+/* Reset de estilos e configurações gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Estilo global */
+body {
+    font-family: 'League Spartan', sans-serif;
+    background: linear-gradient(145deg, #ff004f, #75008b);
+    color: #ffffff; /* Branco */
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.navbar {
+    display: flex;
+    gap: 60px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #ffde59;
+    transform: scale(1.3);
+}
+
+.container {
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 45px;
+    border: solid 4px #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 20px;
+    background: linear-gradient(145deg, #ff004f, #75008b);
+    border-radius: 50px;
+    border: solid 2px #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+}
+
+.card h1 {
+    font-size: 1.9rem;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.card p {
+    font-size: larger;
+    margin: 8px 0;
+}
+
+.card strong {
+    font-size: x-large;
+    text-align: right;
+}
+
+.grafico {
+    width: 50%;
+    text-align: center;
+    padding: 15px;
+}
+
+.grafico h2 {
+    font-size: xx-large;
+    color: #f5f5f5;
+}
+
+.botao {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.botao button {
+    background-color: #00cc66;
+    color: white;
+    border: solid 2px #ffffff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-right: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao button:hover {
+    transition: 0.3s ease;
+    background-color: #00a54d;
+    transform: scale(1.05);
+}
+
+/* Estilos gerais */
+#plataformas-investimento {
+    margin: 0px auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 80px;
+    width: 60%;
+    background: #00000033;
+    border-radius: 25px;
+    border: 4px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+#plataformas-investimento h2 {
+    margin-top: -1px;
+    font-weight: 900;
+    font-size: xx-large;
+    margin-bottom: 40px;
+}
+
+/* Estilo do contêiner de botões */
+.slide {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+}
+
+/* Botões das plataformas */
+.investment-button {
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investment-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos específicos para cada plataforma */
+.investment-button.xp-investimentos {
+    background-image: url('/static/assets/XP_Investimentos_logo.png');
+}
+
+.investment-button.nu-invest {
+    background-image: url('/static/assets/NU_invest_logo.png');
+}
+
+.investment-button.inter-invest {
+    background-image: url('/static/assets/Inter_invest_logo.png');
+}
+
+/* Estilos para a tabela */
+.card table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: separate;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card th, .card td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+
+.card th {
+    font-size: larger;
+}
+
+.card td {
+    font-size: larger;
+}
+
+/* Aplicar as cores nas colunas com base nas classes */
+.card th.transparent,
+.card td.transparent {
+    background-color: transparent; /* Transparente para as células com a classe 'transparent' */
+}
+
+.card th.color,
+.card td.color {
+    background-color: #ff00903c; /* Roxo Escuro para as células com a classe 'color' */
+}
+
+.card th {
+    color: white;
+}
+
+
+
+
+
